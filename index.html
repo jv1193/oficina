@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Mecânica - Orçamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="a_mecanica.jpg" alt="Logo da Oficina" class="logo">
+        <h1>A MECÂNICA</h1>
+        <p>Oficina especializada em mecânica geral e diagnósticos avançados</p>
+    </header>
+    <main>
+        <form id="form-orcamento">
+            <label>Nome do Cliente: <input type="text" name="cliente" required></label>
+            <label>Telefone: <input type="text" name="telefone" required></label>
+            <label>Veículo: <input type="text" name="veiculo" required></label>
+            <label>Data do Orçamento: <input type="date" name="data" required></label>
+            <div id="servicos">
+                <h3>Serviços e Peças</h3>
+                <div class="item">
+                    <input type="text" placeholder="Descrição" class="descricao">
+                    <input type="number" placeholder="Quantidade" class="quantidade" value="1">
+                    <input type="number" placeholder="Valor Unitário" class="valor">
+                </div>
+            </div>
+            <button type="button" onclick="addItem()">+ Adicionar Serviço/Peça</button>
+            <p>Total: R$ <span id="total">0,00</span></p>
+            <label>Observações:<br>
+                <textarea name="observacoes" rows="4">Peças de reposição original, formas de pagamento, etc.</textarea>
+            </label>
+            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
